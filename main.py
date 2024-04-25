@@ -18,9 +18,3 @@ def deserialize_car_object(json: bytes) -> Car:
     serializer = CarSerializer(data=data)
     if serializer.is_valid():
         return serializer.save()
-
-
-car2 = Car.objects.get(id=1)
-json2 = serialize_car_object(car2)
-print(json2)
-print(deserialize_car_object(json2))
